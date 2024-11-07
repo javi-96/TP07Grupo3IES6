@@ -1,10 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <title>Registro de Alumnos</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 
+    <div class="container mt-5">
+        <h1 class="mb-4">Registro de Alumno</h1>
+        <form th:action="@{/guardarAlumno}" th:object="${alumno}" method="post">
+            <div class="form-group">
+                <label for="dni">DNI:</label>
+                <input type="text" id="dni" class="form-control" name="dni" data-th-field="*{dni}" placeholder="Ingresa tu DNI" />
+            </div>
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" class="form-control" name="nombre" data-th-field="*{nombre}" placeholder="Ingresa tu Nombre" />
+            </div>
+            <div class="form-group">
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" class="form-control" name="apellido" data-th-field="*{apellido}" placeholder="Ingresa tu Apellido" />
+            </div>
+            <div class="form-group">
+                <label for="gmail">Correo Electrónico:</label>
+                <input type="email" id="gmail" class="form-control" name="gmail" data-th-field="*{gmail}" placeholder="Ingresa tu Correo Electrónico" />
+            </div>
+            <div class="form-group">
+                <label for="fechaDeNacimiento">Fecha de Nacimiento:</label>
+                <input type="date" id="fechaDeNacimiento" class="form-control" name="fechaDeNacimiento" data-th-field="*{fechaDeNacimiento}" />
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+
+        <a href="/docente" class="btn btn-secondary mt-3">Ir a Docente</a>
+		<a href="/materia" class="btn btn-secondary mt-3">Ir a Materia</a>
+        <a href="/listaAlumnos" class="btn btn-secondary mt-3">Ir a Lista</a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
