@@ -57,7 +57,7 @@ public ModelAndView guardarDocente (Docente docente) {
 	}
 //Eliminar docente
 @GetMapping("/eliminarDocente/{dni}") 
-public ModelAndView deleteDocente (@PathVariable(name = "dni") String dni) {
+public ModelAndView deleteDocente (@PathVariable String dni) {
 docenteService.eliminarDocente(dni);
 
 //muestra el nuevo listado
@@ -68,7 +68,7 @@ return modelView;
 
 //Modificar
 @GetMapping("/modificarDocente/{dni}") 
-public ModelAndView modificarDocente (@PathVariable(name = "dni") String dni) {
+public ModelAndView modificarDocente (@PathVariable String dni) {
 	//el parametro ModelAndView es la vista html
 	ModelAndView modelView = new ModelAndView("docente");
 	
