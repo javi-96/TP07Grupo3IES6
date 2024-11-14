@@ -16,7 +16,7 @@ public class DocenteServiceImpBD implements IDocenteService {
 
 	@Autowired
 	DocenteRepository docenteRepository;
-	
+	  
 	@Override
 	public void guardarDocente(Docente docente) {
 		// TODO Auto-generated method stub

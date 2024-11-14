@@ -30,6 +30,7 @@ public ModelAndView getIndexWithDocente () {
 
 ModelAndView transportador = new ModelAndView("Docente");
 transportador.addObject("docente", unDocente);
+transportador.addObject("band", false);
 
 return transportador;}
 
@@ -72,8 +73,17 @@ public ModelAndView modificarDocente (@PathVariable String dni) {
 	ModelAndView modelView = new ModelAndView("docente");
 	
 	modelView.addObject("docente", docenteService.consultarDocente(dni) );
+	modelView.addObject("band", true);
 	
 	return modelView;
 }
+
+@GetMapping("/listadodocentes") 
+public ModelAndView getAllDocente () {
+
+ModelAndView transportador = new ModelAndView("ListadoDocentes");
+transportador.addObject("listado", docenteService.listarTodosDocentesActivos());
+
+return transportador;}
 
 }

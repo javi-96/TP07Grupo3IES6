@@ -23,8 +23,8 @@
                 <!-- <td th:text="${docente.email}"></td> -->
                 <td data-th-text="${docente.fechaNacimiento}"></td>
                 <td>
-                    <a class="btn btn-danger">Borrar</a>
-                    <a class="btn btn-success">Editar</a>
+                    <a class="btn btn-danger" data-th-href="@{'/eliminarDocente/'+${docente.dni}}">Borrar</a>
+                    <a class="btn btn-success" data-th-href="@{'/modificarDocente/'+${docente.dni}}">Editar</a>
                 </td>
             </tr>
         </table>
